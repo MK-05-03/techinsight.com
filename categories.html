@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Categories | TechInsight</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+    /* width: 100%; */
+}
+
+body{
+    background:radial-gradient(circle at top,#0f1b3d 0%,#050816 60%);
+    color:#fff;
+}
+
+/* HEADER */
+header{
+    padding:20px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:linear-gradient(90deg,#0b1437,#0a0f2c);
+}
+.logo{
+    font-size:22px;
+    font-weight:700;
+    color:#8bb3ff;
+}
+.logo span{color:#a855f7;}
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+nav ul li a{
+    color:#e5e7eb;
+    text-decoration:none;
+    font-size:15px;
+}
+/* nav ul li a.active{
+    background:linear-gradient(135deg,#6366f1,#a855f7);
+    padding:10px 18px;
+    border-radius:8px;
+} */
+
+
+/* CATEGORY GRID */
+.categories{
+    padding:60px;
+}
+.categories h1{
+    font-size:36px;
+    margin-bottom:30px;
+}
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+    margin-bottom:60px;
+}
+.category-card{
+    padding:30px 20px;
+    border-radius:14px;
+    text-align:center;
+    font-weight:600;
+    cursor:pointer;
+}
+
+/* COLORS */
+.ai{background:#2ea3f2;}
+.cyber{background:#f24667;}
+.gadgets{background:#8b63f6;}
+.programming{background:#20c56b;}
+.cloud{background:#2f93f0;}
+.software{background:#ff8a00;}
+.trends{background:#11b7b7;}
+.blockchain{background:#9b5cf6;}
+.data{background:#f24583;}
+.network{background:#5676f3;}
+
+/* ARTICLES */
+.articles{
+    padding:0 60px 60px;
+}
+.articles h2{
+    font-size:28px;
+    margin-bottom:25px;
+}
+
+.article-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.article-card{
+    background:#0b1437;
+    /* height: 38%; */
+    border-radius:16px;
+    overflow:hidden;
+    display:none;
+}
+img{
+    width: 100%;
+}
+.article-image{
+    height:auto;
+    /* background:#8b7b6e; */
+}
+.article-content{
+    padding:20px;
+}
+.article-content h3{
+    font-size:18px;
+    margin-bottom:10px;
+}
+.article-content p{
+    font-size:14px;
+    color:#cbd5f5;
+}
+.article-content p{
+    display:-webkit-box;
+    -webkit-line-clamp:2;     /* show only 2 lines */
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+.article-footer{
+    display:flex;
+    justify-content:space-between;
+    margin-top:15px;
+    font-size:13px;
+    color:#8ea2d9;
+}
+/* FOOTER */
+footer{
+    background:#070b1f;
+    padding:50px 60px;
+    margin-top:40px;
+}
+.footer-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+.footer-about h3{
+    font-size:22px;
+    margin-bottom:12px;
+    color:#8bb3ff;
+}
+.footer-about p{
+    color:#cbd5f5;
+    line-height:1.6;
+    max-width:420px;
+}
+.footer-links h3{
+    font-size:20px;
+    margin-bottom:12px;
+}
+.footer-links ul{
+    list-style:none;
+}
+.footer-links ul li{
+    margin-bottom:10px;
+}
+.footer-links ul li a{
+    text-decoration:none;
+    color:#cbd5f5;
+    font-size:15px;
+}
+.footer-bottom{
+    text-align:center;
+    margin-top:40px;
+    font-size:14px;
+    color:#8ea2d9;
+}
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #fff;
+}
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    header {
+        padding: 16px 30px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .article-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    header {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        width: 100%;
+        display: none;
+        margin-top: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        background: #0a0f2c;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    nav.show {
+        display: block;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 26px;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    /* HERO */
+    .hero {
+        padding: 40px 20px;
+        height: auto;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    /* CATEGORIES */
+    .categories {
+        padding: 40px 20px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* ARTICLES */
+    .featured {
+        padding: 40px 20px;
+    }
+
+    .article-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 40px 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-about p {
+        margin: 0 auto;
+    }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+}
+
+
+/* Hide menu icon on desktop */
+
+
+</style>
+</head>
+
+<body>
+
+    <header>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="logo">✨ Tech<span>Insight</span></div>
+    <nav id="navMenu">
+        <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="terms.html">Privacy Policy & Terms</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- <header>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="logo">✨ Tech<span>Insight</span></div>
+    <nav  id="navMenu" style="width: 30%;">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="categories.html">Categories</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="terms.html">Privacy Policy & Terms</a></li>
+        </ul>
+    </nav>
+</header> -->
+
+<section class="categories">
+<h1>Explore Categories</h1>
+
+<div class="category-grid">
+    <div class="category-card ai" onclick="showCategory('AI')">🤖<br>AI</div>
+    <div class="category-card cyber" onclick="showCategory('Cybersecurity')">🔒<br>Cybersecurity</div>
+    <div class="category-card gadgets" onclick="showCategory('Gadgets')">📱<br>Gadgets</div>
+    <div class="category-card programming" onclick="showCategory('Programming')">💻<br>Programming</div>
+    <div class="category-card cloud" onclick="showCategory('Cloud')">☁️<br>Cloud Computing</div>
+    <div class="category-card software" onclick="showCategory('Software')">⚙️<br>Software Development</div>
+    <div class="category-card trends" onclick="showCategory('Trends')">📊<br>Tech Trends</div>
+    <div class="category-card blockchain" onclick="showCategory('Blockchain')">⛓️<br>Blockchain</div>
+    <div class="category-card data" onclick="showCategory('Data')">📈<br>Data Science</div>
+    <div class="category-card network" onclick="showCategory('Network')">🌐<br>Networking</div>
+</div>
+</section>
+
+<section class="articles" id="articles">
+<h2 id="categoryTitle"></h2>
+
+<div class="article-grid">
+
+<!-- AI -->
+    <div class="article-card" data-category="AI">
+        <div class=".article-image">
+            <img src="ai1.png" >
+        </div>
+
+        <div class="article-content">
+             <a href="ai1.html" style="text-decoration: none;"><h3 style="color: white;">Future of AI in 2026</h3></a>
+            <p>
+                Artificial Intelligence is rapidly evolving and reshaping industries,
+                from healthcare to finance, by enabling smarter automation and decision-making.
+            </p>
+
+            <div class="article-footer">
+                <span>2025</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-card" data-category="AI">
+        <div class="article-image">
+            <img src="ai2.png" >
+        </div>
+
+        <div class="article-content">
+           <a href="ai2.html" style="text-decoration: none;"><h3 style="color: white;">AI in Healthcare</h3></a>
+            <p>
+                How AI is transforming the healthcare sector through advanced diagnostics,
+                 personalized treatments, and improved patient care.
+            </p>
+
+            <div class="article-footer">
+                <span>2025</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-card" data-category="AI">
+        <div class="article-image">
+            <img src="ai3.png" >
+        </div>
+
+        <div class="article-content">
+         <a href="ai3.html" style="text-decoration: none;"> <h3 style="color: white;">Ethical Challenges in Artificial Intelligence</h3></a>
+            <p>
+                Understanding the key ethical dilemmas posed by AI technology in society and ways to address them responsibly.
+            </p>
+
+            <div class="article-footer">
+                <span>2025</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-card" data-category="AI">
+        <div class="article-image">
+            <img src="ai4.png" >
+        </div>
+
+        <div class="article-content">
+      <a href="ai4.html" style="text-decoration: none;"><h3 style="color: white;">Natural Language Processing and AI</h3></a>
+            <p>
+                Exploring how AI understands, interprets, and interacts with human language to power applications like chatbots,
+                 translation, and sentiment analysis.
+            </p>
+
+            <div class="article-footer">
+                <span>2025</span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="article-card" data-category="AI">
+        <div class="article-image">
+            <img src="ai5.png" >
+        </div>
+
+        <div class="article-content">
+            <a href="ai5.html" style="text-decoration: none;"> <h3 style="color: white;">Future of AI in 2026</h3></a>
+            <p>
+                Exploring how AI-driven automation is transforming workplaces,
+                 improving efficiency, and reshaping the future of work.
+            </p>
+
+            <div class="article-footer">
+                <span>2025</span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="article-card" data-category="AI">
+        <div class="article-image">
+            <img src="ai6.png" >
+        </div>
+
+        <div class="article-content">
+            <a href="ai6.html" style="text-decoration: none;"><h3 style="color: white;">AI in Creative Industries</h3></a>
+            <p>
+             Exploring how Artificial Intelligence is transforming art,
+              music, literature, film, and other creative fields by collaborating with human creativity.
+            </p>
+
+            <div class="article-footer">
+                <span>2025</span>
+            </div>
+        </div>
+    </div>
+
+
+<!-- CYBERSECURITY -->
+        <div class="article-card" data-category="Cybersecurity">
+            <div class="article-image">
+                <img src="cs1.png">
+            </div>
+
+        <div class="article-content">
+            <a href="cs1.html" style="text-decoration: none;"><h3 style="color: white;">Introduction to Cybersecurity</h3></a>
+              <p>Understanding the fundamentals of cybersecurity, its importance, and how it protects systems and data from threats...</p>
+                  <div class="article-footer">
+                      <span>2025</span>
+         </div>
+        </div>
+        </div>
+
+        <div class="article-card" data-category="Cybersecurity">
+            <div class="article-image">
+                <img src="cs2.png">
+            </div>
+
+        <div class="article-content">
+            <a href="cs2.html" style="text-decoration: none;"><h3 style="color: white;">Types of Cyber Attacks and Threats</h3></a>
+              <p>Understanding the various cyber threats, their methods, and impacts on individuals, organizations, and nations....</p>
+                  <div class="article-footer">
+                      <span>2025</span>
+         </div>
+        </div>
+        </div>
+
+        <div class="article-card" data-category="Cybersecurity">
+            <div class="article-image">
+                <img src="cs3.png">
+            </div>
+
+        <div class="article-content">
+            <a href="cs3.html" style="text-decoration: none;"><h3 style="color: white;">Cybersecurity Measures and Best Practices</h3></a>
+              <p>Comprehensive guidelines and strategies to protect systems, data, and networks from cyber threats....</p>
+                  <div class="article-footer">
+                      <span>2025</span>
+         </div>
+        </div>
+        </div>
+
+        <div class="article-card" data-category="Cybersecurity">
+            <div class="article-image">
+                <img src="cs4.png">
+            </div>
+
+        <div class="article-content">
+           <a href="cs4.html" style="text-decoration: none;"> <h3 style="color: white;">Cybersecurity in the Digital Age and Emerging Threats</h3></a>
+              <p>Exploring modern cybersecurity challenges, emerging threats, and strategies to protect digital systems and data....</p>
+                  <div class="article-footer">
+                      <span>2025</span>
+         </div>
+        </div>
+        </div>
+
+        <div class="article-card" data-category="Cybersecurity">
+            <div class="article-image">
+                <img src="cs5.png">
+            </div>
+
+        <div class="article-content">
+         <a href="cs5.html" style="text-decoration: none;"><h3 style="color: white;">Cybersecurity in Organizations and Critical Infrastructure</h3></a>
+              <p>Examining how organizations and critical infrastructure sectors protect themselves from cyber threats to ensure continuity and security....</p>
+                  <div class="article-footer">
+                      <span>2025</span>
+         </div>
+        </div>
+        </div>
+
+        <div class="article-card" data-category="Cybersecurity">
+            <div class="article-image">
+                <img src="cs6.png">
+            </div>
+
+        <div class="article-content">
+            <a href="cs6.html" style="text-decoration: none;"><h3 style="color: white;">The Future of Cybersecurity and Emerging Technologies</h3></a>
+              <p>Exploring how emerging technologies and future trends will shape cybersecurity, and strategies to stay ahead of evolving threats...</p>
+                  <div class="article-footer">
+                      <span>2025</span>
+         </div>
+        </div>
+        </div>
+
+<!-- GADGETS -->
+ 
+    <div class="article-card" data-category="Gadgets">
+        <div class="article-image">
+            <img src="g1.png" style="width: 100%;">
+        </div>
+    <div class="article-content">
+        <a href="g1.html" style="text-decoration: none;"><h3 style="color: white;">The Evolution of Modern Gadgets</h3></a>
+        <p>Tracing the journey of gadgets from basic tools to smart devices shaping daily life....</p>
+        <div class="article-footer">
+            <span>2025</span>
+        </div>
+    </div>
+    </div>
+
+
+<div class="article-card" data-category="Gadgets">
+    <div class="article-image">
+        <img src="g2.png">
+    </div>
+<div class="article-content">
+    <a href="g2.html" style="text-decoration: none;"><h3 style="color: white;">Smartphones: Revolutionizing Communication and Productivity</h3></a>
+    <p>How smartphones have transformed communication, work, and daily life.....</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+
+<div class="article-card" data-category="Gadgets">
+    <div class="article-image">
+        <img src="g3.png">
+    </div>
+<div class="article-content">
+    <a href="g3.html" style="text-decoration: none;"><h3 style="color: white;">Wearable Gadgets: The Next Step in Personal Technology</h3></a>
+    <p>Exploring how wearables are enhancing health, fitness, and lifestyle management.</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+ 
+<div class="article-card" data-category="Gadgets">
+    <div class="article-image">
+        <img src="g4.png">
+    </div>
+<div class="article-content">
+    <a href="g4.html" style="text-decoration: none;"><h3 style="color: white;">Smart Home Gadgets: Redefining Modern Living</h3></a>
+    <p>How smart home devices are transforming convenience, security, and energy efficiency in households....</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+ 
+<div class="article-card" data-category="Gadgets">
+    <div class="article-image">
+        <img src="g5.png">
+    </div>
+<div class="article-content">
+    <a href="g5.html" style="text-decoration: none;"><h3 style="color: white;">Gaming Gadgets: Redefining Entertainment</h3></a>
+    <p>Exploring how gaming gadgets transform interactive entertainment, eSports, and immersive experiences....</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+
+<div class="article-card" data-category="Gadgets">
+    <div class="article-image">
+        <img src="g6.png">
+    </div>
+<div class="article-content">
+    <a href="g6.html" style="text-decoration: none;"><h3 style="color: white;">Future Gadgets: Innovation at Your Fingertips</h3></a>
+    <p>Exploring upcoming gadget innovations and how they will shape daily life, work, and entertainment...</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+<!-- PROGRAMMING -->
+
+<div class="article-card" data-category="Programming">
+    <div class="article-image">
+        <img src="p1.png">
+    </div>
+<div class="article-content">
+    <a href="p1.html" style="text-decoration: none;"><h3 style="color: white;">The Evolution of Programming Languages</h3></a>
+    <p>Tracing the development of programming languages from early machine code to modern high-level languages....</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+
+<div class="article-card" data-category="Programming">
+    <div class="article-image">
+        <img src="p2.png">
+    </div>
+<div class="article-content">
+        <a href="p2.html" style="text-decoration: none;"><h3 style="color: white;">Introduction to Object-Oriented Programming (OOP)</h3></a>
+    <p>Understanding the core principles of OOP and its impact on software development.....</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+
+<div class="article-card" data-category="Programming">
+    <div class="article-image">
+        <img src="p3.png">
+    </div>
+<div class="article-content">
+    <a href="p3.html" style="text-decoration: none;"><h3 style="color: white;">Introduction to Web Development</h3></a>
+    <p>Understanding how websites and web applications are designed and developed....</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+
+<div class="article-card" data-category="Programming">
+    <div class="article-image">
+        <img src="p4.png">
+    </div>
+<div class="article-content">
+    <a href="p4.html" style="text-decoration: none;"><h3 style="color: white;">Data Structures & Algorithms</h3></a>
+    <p>Understanding the fundamental building blocks of efficient programming....</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+ 
+<div class="article-card" data-category="Programming">
+    <div class="article-image">
+        <img src="p5.png">
+    </div>
+<div class="article-content">
+   <a href="p5.html" style="text-decoration: none;"> <h3 style="color: white;">Programming for AI & Machine Learning</h3></a>
+    <p>Exploring the languages, frameworks, and techniques used in AI programming.</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+ 
+<div class="article-card" data-category="Programming">
+    <div class="article-image">
+        <img src="p6.png">
+    </div>
+<div class="article-content">
+   <a href="p6.html" style="text-decoration: none;"> <h3 style="color: white;">Future Trends in Programming</h3></a>
+    <p>Exploring the evolving landscape of programming languages, tools, and paradigms....</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+
+<!-- CLOUD -->
+ 
+<div class="article-card" data-category="Cloud">
+    <div class="article-image">
+        <img src="cc 1.png">
+    </div>
+<div class="article-content">
+    <a href="cc1.html" style="text-decoration: none;"><h3 style="color: white;">Introduction to Cloud Computing</h3></a>
+    <p>Understanding the basics of cloud computing and its impact on modern IT infrastructure....</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+
+<div class="article-card" data-category="Cloud">
+    <div class="article-image">
+        <img src="cc2.png">
+    </div>
+<div class="article-content">
+    <a href="cc2.html" style="text-decoration: none;"><h3 style="color: white;">Types of Cloud Deployment</h3></a>
+    <p>Understanding the different deployment models of cloud computing and their use cases....</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+ 
+<div class="article-card" data-category="Cloud">
+    <div class="article-image">
+        <img src="cc3.png">
+    </div>
+<div class="article-content">
+    <a href="cc3.html" style="text-decoration: none;"><h3 style="color: white;">Cloud Security and Compliance</h3></a>
+    <p>Ensuring data safety, privacy, and regulatory compliance in cloud environments....</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+
+<div class="article-card" data-category="Cloud">
+    <div class="article-image">
+        <img src="cc4.png">
+    </div>
+<div class="article-content">
+    <a href="cc4.html" style="text-decoration: none;"><h3 style="color: white;">Cloud Storage Solutions</h3></a>
+    <p>Exploring different cloud storage types, services, and benefits...</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+ 
+<div class="article-card" data-category="Cloud">
+    <div class="article-image">
+        <img src="cc5.png">
+    </div>
+<div class="article-content">
+    <a href="cc5.html" style="text-decoration: none;"><h3 style="color: white;">Cloud in Business and Enterprise</h3></a>
+    <p>How cloud computing transforms business operations and enterprise IT infrastructure...</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+ 
+<div class="article-card" data-category="Cloud">
+    <div class="article-image">
+        <img src="cc6.png">
+    </div>
+<div class="article-content">
+    <a href="cc6.html" style="text-decoration: none;"><h3 style="color: white;">Future Trends in Cloud Computing</h3></a>
+    <p>Exploring emerging technologies and future developments in cloud computing...</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+<!-- SOFTWARE -->
+  
+<div class="article-card" data-category="Software">
+    <div class="article-image">
+        <img src="sd1.png">
+    </div>
+<div class="article-content">
+    <a href="sd1.html" style="text-decoration: none;"><h3 style="color: white;">Introduction to Software Development</h3></a>
+    <p>Understanding the fundamentals of software development, its life cycle, and its impact on technology....</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+ 
+<div class="article-card" data-category="Software">
+    <div class="article-image">
+        <img src="sd2.png">
+    </div>
+<div class="article-content">
+    <a href="sd2.html" style="text-decoration: none;"><h3 style="color: white;">Software Development Methodologies</h3></a>
+    <p>Software development lifecycle.Exploring different approaches to software development for project efficiency and quality....</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+ 
+<div class="article-card" data-category="Software">
+    <div class="article-image">
+        <img src="sd3.png">
+    </div>
+<div class="article-content">
+    <a href="sd3.html" style="text-decoration: none;"><h3 style="color: white;">Programming Languages and Frameworks</h3></a>
+    <p>An overview of popular programming languages and frameworks for modern software development....</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+
+<div class="article-card" data-category="Software">
+    <div class="article-image">
+        <img src="sd4.png">
+    </div>
+<div class="article-content">
+    <a href="sd4.html" style="text-decoration: none;"><h3 style="color: white;">Data Structures and Algorithms in Software Development</h3></a>
+    <p>Understanding the core principles of data structures and algorithms for efficient software design...</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+
+<div class="article-card" data-category="Software">
+    <div class="article-image">
+        <img src="sd5.png">
+    </div>
+<div class="article-content">
+    <a href="sd5.html" style="text-decoration: none;"><h3 style="color: white;">Software Testing and Quality Assurance</h3></a>
+    <p>Ensuring software reliability, functionality, and performance through rigorous testing and QA practices...</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+
+<div class="article-card" data-category="Software">
+    <div class="article-image">
+        <img src="sd6.png">
+    </div>
+<div class="article-content">
+    <a href="sd6.html" style="text-decoration: none;"><h3 style="color: white;">Future Trends in Software Development</h3></a>
+    <p>Exploring emerging technologies and practices shaping the future of software development...</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+<!-- TRENDS -->
+ 
+<div class="article-card" data-category="Trends">
+    <div class="article-image">
+        <img src="tt1.png">
+    </div>
+<div class="article-content">
+    <a href="tt1.html" style="text-decoration: none;"><h3 style="color: white;">Artificial Intelligence and Machine Learning Trends</h3></a>
+    <p>Exploring the latest trends in AI and ML shaping the future of technology....</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+ 
+<div class="article-card" data-category="Trends">
+    <div class="article-image">
+        <img src="tt2.png">
+    </div>
+<div class="article-content">
+    <a href="tt2.html" style="text-decoration: none;"><h3 style="color: white;">Blockchain and Decentralized Technologies</h3></a>
+    <p>Understanding blockchain technology and its impact on finance, supply chain, and digital trust....</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+<div class="article-card" data-category="Trends">
+    <div class="article-image">
+        <img src="tt3.png">
+    </div>
+<div class="article-content">
+    <a href="tt3.html" style="text-decoration: none;"><h3 style="color: white;">Internet of Things (IoT) Innovations</h3></a>
+    <p>Exploring how connected devices are transforming everyday life and industries....</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+  
+<div class="article-card" data-category="Trends">
+    <div class="article-image">
+        <img src="tt4.png">
+    </div>
+<div class="article-content">
+    <a href="tt4.html" style="text-decoration: none;"><h3 style="color: white;">5G and Next-Gen Connectivity</h3></a>
+    <p>Exploring how 5G technology is enabling faster, low-latency, and more reliable communication for modern applications....</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+ 
+<div class="article-card" data-category="Trends">
+    <div class="article-image">
+        <img src="tt5.png">
+    </div>
+<div class="article-content">
+    <a href="tt5.html" style="text-decoration: none;"><h3 style="color: white;">Cybersecurity and Privacy Trends</h3></a>
+    <p>Exploring the latest trends in protecting digital assets and personal privacy in the modern world....</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+  
+<div class="article-card" data-category="Trends">
+    <div class="article-image">
+        <img src="tt6.png">
+    </div>
+<div class="article-content">
+    <a href="tt6.html" style="text-decoration: none;"><h3 style="color: white;">Future of Quantum Computing and Advanced Tech</h3></a>
+    <p>Examining how quantum computing and other emerging technologies will shape the next era of innovation.</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+<!-- BLOCKCHAIN -->
+ 
+<div class="article-card" data-category="Blockchain">
+    <div class="article-image">
+        <img src="bc1.png">
+    </div>
+<div class="article-content">
+    <a href="bc1.html" style="text-decoration: none;"><h3 style="color: white;">Introduction to Blockchain Technology</h3></a>
+    <p>Understanding the fundamentals of blockchain and its significance in the digital world...</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+
+<div class="article-card" data-category="Blockchain">
+    <div class="article-image">
+        <img src="bc2.png">
+    </div>
+<div class="article-content">
+    <a href="bc2.html" style="text-decoration: none;"><h3 style="color: white;">Types of Blockchain</h3></a>
+    <p>Exploring the main types of blockchain and their use cases in various industries.</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+ 
+<div class="article-card" data-category="Blockchain">
+    <div class="article-image">
+        <img src="bc3.png">
+    </div>
+<div class="article-content">
+    <a href="bc3.html" style="text-decoration: none;"><h3 style="color: white;">Smart Contracts and DApps</h3></a>
+    <p>Understanding smart contracts and decentralized applications built on blockchain.</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+ 
+<div class="article-card" data-category="Blockchain">
+    <div class="article-image">
+        <img src="bc4.png">
+    </div>
+<div class="article-content">
+    <a href="bc4.html" style="text-decoration: none;"><h3 style="color: white;">Blockchain in Finance and Banking</h3></a>
+    <p>Exploring blockchain’s impact on banking, payments, and financial services...</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+
+<div class="article-card" data-category="Blockchain">
+    <div class="article-image">
+        <img src="bc5.png">
+    </div>
+<div class="article-content">
+    <a href="bc5.html" style="text-decoration: none;"><h3 style="color: white;">Blockchain in Supply Chain and Logistics</h3></a>
+    <p>How blockchain is transforming supply chain transparency, efficiency, and traceability...</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+ 
+<div class="article-card" data-category="Blockchain">
+    <div class="article-image">
+        <img src="bc6.png">
+    </div>
+<div class="article-content">
+    <a href="bc6.html" style="text-decoration: none;"><h3 style="color: white;">Future of Blockchain Technology</h3></a>
+    <p>Exploring emerging trends, innovations, and the potential impact of blockchain in the coming years...</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+
+<!-- DATA -->
+ 
+<div class="article-card" data-category="Data">
+    <div class="article-image">
+        <img src="ds1.png">
+    </div>
+<div class="article-content">
+    <a href="ds1.html" style="text-decoration: none;"><h3 style="color: white;">Introduction to Data Science</h3></a>
+    <p>Understanding the fundamentals of data science and its importance in the modern world...</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+
+<div class="article-card" data-category="Data">
+    <div class="article-image">
+        <img src="ds2.png">
+    </div>
+<div class="article-content">
+    <a href="ds2.html" style="text-decoration: none;"><h3 style="color: white;">Data Analysis Techniques</h3></a>
+    <p>Exploring essential techniques used in analyzing data to extract insights...</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+
+<div class="article-card" data-category="Data">
+    <div class="article-image">
+        <img src="ds3.png">
+    </div>
+<div class="article-content">
+    <a href="ds3.html" style="text-decoration: none;"><h3 style="color: white;">Machine Learning and AI in Data Science</h3></a>
+    <p>Understanding how AI and ML enhance data-driven decision-making...</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+
+<div class="article-card" data-category="Data">
+    <div class="article-image">
+        <img src="ds4.png">
+    </div>
+<div class="article-content">
+    <a href="ds4.html" style="text-decoration: none;"><h3 style="color: white;">Big Data and Data Engineering</h3></a>
+    <p>Exploring how big data and engineering techniques support scalable data science solutions...</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+ 
+<div class="article-card" data-category="Data">
+    <div class="article-image">
+        <img src="ds5.png">
+    </div>
+<div class="article-content">
+    <a href="ds5.html" style="text-decoration: none;"><h3 style="color: white;">Data Visualization and Reporting</h3></a>
+    <p>How data visualization and reporting transform raw data into actionable insights.</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+
+<div class="article-card" data-category="Data">
+    <div class="article-image">
+        <img src="ds6.png">
+    </div>
+<div class="article-content">
+    <a href="ds6.html" style="text-decoration: none;"><h3 style="color: white;">Future Trends in Data Science</h3></a>
+    <p>Exploring emerging technologies, methodologies, and the future of data-driven decision-making...</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+<!-- NETWORK -->
+  
+<div class="article-card" data-category="Network">
+    <div class="article-image">
+        <img src="n1.png">
+    </div>
+<div class="article-content">
+    <a href="n1.html" style="text-decoration: none;"><h3 style="color: white;">Introduction to Networking</h3></a>
+    <p>Understanding the fundamentals of computer networking and its importance in modern technology...</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+ 
+<div class="article-card" data-category="Network">
+    <div class="article-image">
+        <img src="n2.png">
+    </div>
+<div class="article-content">
+    <a href="n2.html" style="text-decoration: none;"><h3 style="color: white;">Networking Protocols and Standards</h3></a>
+    <p>Understanding the rules and standards that enable devices to communicate effectively in a network...</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+
+<div class="article-card" data-category="Network">
+    <div class="article-image">
+        <img src="n3.png">
+    </div>
+<div class="article-content">
+    <a href="n3.html" style="text-decoration: none;"><h3 style="color: white;">Network Security Fundamentals</h3></a>
+    <p>Understanding key concepts and practices to protect networks from unauthorized access and cyber threats...</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+
+<div class="article-card" data-category="Network">
+    <div class="article-image">
+        <img src="n4.png">
+    </div>
+<div class="article-content">
+    <a href="n4.html" style="text-decoration: none;"><h3 style="color: white;">Wireless Networking and Wi-Fi</h3></a>
+    <p>Exploring wireless networks, Wi-Fi technologies, and their impact on connectivity...</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+
+<div class="article-card" data-category="Network">
+    <div class="article-image">
+        <img src="n5.png">
+    </div>
+<div class="article-content">
+    <a href="n5.html" style="text-decoration: none;"><h3 style="color: white;">Cloud Networking and Virtualization</h3></a>
+    <p>Computer networks.Understanding cloud-based networking and virtualization technologies that enable scalable, flexible, and efficient networks....</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+  
+<div class="article-card" data-category="Network">
+    <div class="article-image">
+        <img src="n6.png">
+    </div>
+<div class="article-content">
+    <a href="n6.html" style="text-decoration: none;"><h3 style="color: white;">Future Trends in Networking</h3></a>
+    <p>Exploring emerging technologies, trends, and innovations shaping the future of networking...</p>
+    <div class="article-footer">
+        <span>2025</span>
+    </div>
+</div>
+</div>
+
+
+</div>
+</section>
+<!-- FOOTER -->
+<footer>
+    <div class="footer-container">
+
+        <!-- LEFT -->
+        <div class="footer-about">
+            <h3>TechInsight</h3>
+            <p>
+                TechInsight is a modern technology blog delivering expert insights,
+                in-depth articles, and the latest trends in AI, cybersecurity,
+                programming, and emerging technologies.
+            </p>
+        </div>
+
+        <!-- CENTER -->
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                 <li><a href="contact.html">Contact</a></li>
+                 <li><a href="terms.html">Privacy Policy & Terms</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 TechInsight. All rights reserved.
+    </div>
+</footer>
+<script>
+function showCategory(category){
+    document.getElementById("categoryTitle").innerText = category + " Articles";
+    document.querySelectorAll(".article-card").forEach(card=>{
+        card.style.display = card.dataset.category === category ? "block" : "none";
+    });
+    document.getElementById("articles").scrollIntoView({behavior:"smooth"});
+}
+</script>
+<script>
+function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
