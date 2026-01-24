@@ -49,11 +49,73 @@ h1{
     color:#cbd5f5;
     font-size:17px;
 }
+.lnk{
+  color: yellow;
+}
 
 /* Make tables responsive */
 .article-text table{
     width:100%;
     border-collapse:collapse;
+}
+.logo{
+    font-size:22px;
+    font-weight:700;
+    color:#8bb3ff;
+     text-decoration:none;
+}
+.logo span{color:#a855f7;}
+
+/* FOOTER */
+footer{
+    background:#070b1f;
+    padding:50px 60px;
+    margin-top:40px;
+}
+.footer-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+.footer-about h3{
+    font-size:22px;
+    margin-bottom:12px;
+    color:#8bb3ff;
+}
+.footer-about p{
+    color:#cbd5f5;
+    line-height:1.6;
+    max-width:420px;
+}
+.footer-links h3{
+    font-size:20px;
+    margin-bottom:12px;
+}
+.footer-links ul{
+    list-style:none;
+}
+.footer-links ul li{
+    margin-bottom:10px;
+}
+.footer-links ul li a{
+    text-decoration:none;
+    color:#cbd5f5;
+    font-size:15px;
+}
+.footer-bottom{
+    text-align:center;
+    margin-top:40px;
+    font-size:14px;
+    color:#8ea2d9;
+}
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #fff;
+}
+.footer-ul{
+  margin-left: -35px !important;
 }
 
 /* ================= MOBILE FIX ================= */
@@ -62,6 +124,9 @@ h1{
 
     body{
         padding:20px;
+    }
+    header{
+      margin-top: -5px !important;
     }
 
     h1{
@@ -80,11 +145,26 @@ h1{
     table{
         font-size:14px;
     }
+    /* FOOTER */
+    footer {
+        padding: 40px 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-about p {
+        margin: 0 auto;
+    }
 }
 
 /* Small phones */
 @media (max-width:480px){
-
+  header{
+      margin-top: -5px !important;
+    }
     h1{
         font-size:22px;
     }
@@ -96,11 +176,30 @@ h1{
     table{
         font-size:13px;
     }
+    /* FOOTER */
+    footer {
+        padding: 40px 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-about p {
+        margin: 0 auto;
+    }
 }
 
 </style>
 </head>
-
+<header style="margin-top: -35px; margin-bottom: 30px;">
+  <a href="index.html" class="logo">
+    <div>
+      ✨ Tech<span>Insight</span>
+    </div>
+  </a>
+</header>
 <body>
 
 <h1>Data Visualization and Reporting</h1>
@@ -110,7 +209,7 @@ h1{
 </div>
 
 <div class="article-text">
-    <table border="1" width="100%" cellpadding="10" cellspacing="0">
+    <table style="border: 1px solid;" width="100%" cellpadding="10" cellspacing="0">
   <tr>
     <td>
       <p><i>How data visualization and reporting transform raw data into actionable insights.</i></p>
@@ -179,5 +278,36 @@ Visualization enhances <a href="ds2.html" style="color: yellow;">data analysis</
 </p>
 
 </div>
+<!-- FOOTER -->
+<footer>
+    <div class="footer-container">
+
+        <!-- LEFT -->
+        <div class="footer-about">
+            <h3>TechInsight</h3>
+            <p>
+                TechInsight is a modern technology blog delivering expert insights,
+                in-depth articles, and the latest trends in AI, cybersecurity,
+                programming, and emerging technologies.
+            </p>
+        </div>
+
+        <!-- CENTER -->
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul class="footer-ul">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="terms.html">Privacy Policy & Terms</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="footer-bottom">
+        © 2025 TechInsight. All rights reserved.
+    </div>
+</footer>
 </body>
 </html>
