@@ -83,6 +83,8 @@ nav ul li a{
     padding:0 60px 60px;
 }
 .articles h2{
+     padding: 20px 9px;
+    color: #8bb3ff;
     font-size:28px;
     margin-bottom:25px;
 }
@@ -301,4 +303,5 @@ footer{
     .menu-toggle {
         display: block;
     }
+
 }
