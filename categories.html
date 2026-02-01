@@ -1449,23 +1449,11 @@ Discover the latest strategies, tools, and best practices for effective network 
         © 2025 TechInsight. All rights reserved.
     </div>
 </footer>
-<script>
-function showCategory(category){
-    document.getElementById("categoryTitle").innerText = category + " Articles";
-    document.querySelectorAll(".article-card").forEach(card=>{
-        card.style.display = card.dataset.category === category ? "block" : "none";
-    });
-    document.getElementById("articles").scrollIntoView({behavior:"smooth"});
-}
-</script>
-<script>
-function toggleMenu() {
-    document.getElementById("navMenu").classList.toggle("show");
-}
-</script>
+<script src="categoryjs.js" defer></script>
 
 </body>
 </html>
+
 
 
 
