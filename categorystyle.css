@@ -48,6 +48,7 @@ nav ul li a{
     padding:60px;
 }
 .categories h1{
+    color: #8bb3ff;
     font-size:36px;
     margin-bottom:30px;
 }
@@ -302,3 +303,4 @@ footer{
         display: block;
     }
 }
+
