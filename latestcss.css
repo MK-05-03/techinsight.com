@@ -26,6 +26,9 @@ header{
     text-decoration: none;
 }
 .logo span{color:#a855f7;}
+.logo-icon{
+  width: 19% !important;
+}
 nav ul{
     list-style:none;
     display:flex;
@@ -305,3 +308,4 @@ footer{
     }
 
 }
+
