@@ -181,7 +181,13 @@ footer{
     font-size:14px;
     color:#8ea2d9;
 }
-
+/* Desktop ad */
+.desktop-ad {
+  display: block;
+}
+.mobile-ad {
+  display: none;
+}
 /* =========================
    RESPONSIVE
 ========================= */
@@ -199,7 +205,12 @@ footer{
         padding:15px 20px;
         flex-wrap:wrap;
     }
-
+ .desktop-ad {
+    display: none;
+  }
+  .mobile-ad {
+    display: block;
+  }
     .menu-toggle{
         display:block;
     }
