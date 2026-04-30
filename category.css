@@ -259,6 +259,13 @@ footer{
     cursor: pointer;
     color: #fff;
 }
+/* Desktop ad */
+.desktop-ad {
+  display: block;
+}
+.mobile-ad {
+  display: none;
+}
 /* =========================
    RESPONSIVE DESIGN
 ========================= */
@@ -273,7 +280,12 @@ footer{
   body {
     overflow-x: hidden;
   }
-
+ .desktop-ad {
+    display: none;
+  }
+  .mobile-ad {
+    display: block;
+  }
   /* =================
      HEADER / NAVBAR
   ================== */
