@@ -220,6 +220,13 @@ footer{
     cursor: pointer;
     color: #fff;
 }
+.desktop-ad {
+  display: block;
+}
+.mobile-ad {
+  display: none;
+}
+
 /* =========================
    RESPONSIVE DESIGN
 ========================= */
@@ -277,7 +284,12 @@ footer{
         cursor: pointer;
         color: #fff;
     }
-
+ .desktop-ad {
+    display: none;
+  }
+  .mobile-ad {
+    display: block;
+  }
     /* HERO */
     .hero {
         padding: 40px 20px;
